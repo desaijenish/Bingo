@@ -71,14 +71,14 @@ def fetch_all_users(
     return user
 
 
-# @router.post("", status_code=200)
-# def add_user(
-#     *,
-#     user_in: UserCreate,
-#     db: Session = Depends(dependencies.get_db)
-# ) -> dict:
-#     user = crud.user.create(db=db, obj_in=user_in)
-#     return user
+@router.post("", status_code=200)
+def add_user(
+    *,
+    user_in: UserCreate,
+    db: Session = Depends(dependencies.get_db)
+) -> dict:
+    user = crud.user.create(db=db, obj_in=user_in)
+    return user
 
 
 @router.delete("/{user_id}", status_code=200)
