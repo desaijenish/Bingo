@@ -9,3 +9,9 @@ Set the database configuration into the `config\setting.py`
   -> alembic revision --autogenerate -m "your message"
   -> alembic upgrade head
 5. Run `uvicorn app:app --reload`
+
+
+
+
+.\env\Scripts\Activate
+uvicorn main:app --host 0.0.0.0 --port 8000
