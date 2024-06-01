@@ -9,16 +9,16 @@ from middlewares.auth_middleware import AuthMiddleWare
 root_router = APIRouter()
 app = FastAPI()
 
-origins = ['http://localhost:3000', 'http://localhost:3001']
+origins = ['http://localhost:3000', 'http://localhost:3001', "http://192.168.43.1"]
 
 # # app.add_middleware(AuthMiddleWare)
-# app.add_middleware(
-#     CORSMiddleware,
-#     allow_origins=origins,
-#     allow_credentials=True,
-#     allow_methods=['*'],
-#     allow_headers=['*'],
-# )
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=['*'],
+    allow_headers=['*'],
+)
 
 app.mount("/static", StaticFiles(directory="./static"), name="static")
 
