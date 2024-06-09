@@ -4,47 +4,17 @@ from pydantic import BaseModel, EmailStr
 
 
 class UserBase(BaseModel):
-    first_name: Optional[str] = None
-    last_name: int = 1
-    email: Optional[EmailStr] = None
-    phone: Optional[str] = None
-    status: int = 1
+    name: Optional[str] = None
+    unique_id: int = 1
 
 
 class UserCreate(UserBase):
-    first_name: str
-    email: EmailStr
-    status: int = 1
-    class Config:
-        orm_mode = True
+    name: Optional[str] = None
+    unique_id: int = 1
 
-class UserDetails(UserBase):
-    gender: str
-    class Config:
-        orm_mode = True
+class UserGeneratedCode(BaseModel):
+    generated_code: Optional[str] = None
 
-
-class UserUpdate(UserBase):
-    id: int
-
-
-class UserDelete(UserBase):
-    id: int
-
-
-class UserInDBBase(UserBase):
-    id: Optional[int] = None
-
-    class Config:
-        orm_mode = True
-
-
-class UserOnly(UserInDBBase):
-    ...
-
-
-class UserSearch(BaseModel):
-    startAt: int
-    pageSize: int
-    sortDesc: bool
+class UserAddCode(BaseModel):
+    add_code: Optional[str] = None
 

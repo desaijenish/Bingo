@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from models.user import User
 from sqlalchemy.orm import Session
 from db.base_class import Base
-from schemas.user import UserSearch
+from schemas.user import UserCreate
 
 ModelType = TypeVar("ModelType", bound=Base)
 CreateSchemaType = TypeVar("CreateSchemaType", bound=BaseModel)

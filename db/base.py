@@ -3,4 +3,4 @@
 from db.base_class import Base  # noqa
 from db.base_class import BaseDefault  # noqa
 from models.user import User
-from models.todo import Todo
+from models.gamestart import GameStart
